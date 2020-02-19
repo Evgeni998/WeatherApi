@@ -22,11 +22,29 @@
  border:1px solid grey;
  background-color: rgb(235,235,235);
  margin-bottom: 8px;
- padding: 10px 35px;
+ padding: 10px 25px;
 }
 
 .smh {
     display:flex;
     flex-direction: column;
     flex-wrap:wrap;
+}
+
+.degrees {
+    display:flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: center;
+}
+#d1 {
+    
+    
+    padding-right:10px;
+    border-right: 1px solid grey;
+    color:grey;
+}
+
+#d2 {
+    padding-left: 10px;
 }

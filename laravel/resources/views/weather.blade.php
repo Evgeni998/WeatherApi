@@ -24,10 +24,15 @@
                 <div class = "inner-container">
               
                 @for($index = 0; $index < 40; $index+=8)
+                      
                     <div class = "smh">
                     <img src="http://openweathermap.org/img/w/{{$data->list[$index]->weather[0]->icon}}.png">
-                    <h4>{{$data->list[$index]->weather[0]->main}}</h4>
-                    <h4>{{date('w', strtotime($data->list[$index]->dt_txt))}}</h4>
+                    <div class = "degrees">
+                    <p id = "d1">{{intval($data->list[$index]->main->temp_max - 273.15)}}° </p>
+                    <p id = "d2">{{intval($data->list[$index]->main->temp_min - 273.15)}}°</p>
+                    </div>
+                    <h4>{{date("l", strtotime($data->list[$index]->dt_txt))}}</h4>
+                    
                     </div>
                 @endfor
                 </div>
