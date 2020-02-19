@@ -1,0 +1,32 @@
+.outer-container {
+    display:flex;
+    align-items: flex-end;
+    width:700px;
+    height: 600px;
+    border:1px solid black;
+    justify-content: space-around;
+}
+
+.inner-container {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.main {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.smh {
+ margin-left:6px;
+ border:1px solid grey;
+ background-color: rgb(235,235,235);
+ margin-bottom: 8px;
+ padding: 10px 35px;
+}
+
+.smh {
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
