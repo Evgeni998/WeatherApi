@@ -20,7 +20,7 @@
         <div class = "outer-container"> 
             <div class = "inner-container">
                 <!--Get the city name, the day of the week and the current condition of the weather -->
-                <div class = header>
+                <div class = "header add">
                     <h2 id = "city">{{$data->city->name}}</h2>
                     <h4 id = "date">{{substr(date("l", strtotime($data->list[0]->dt_txt)), 0, 3)}}</h4>
                     <h4 id = "cond">{{$data->list[0]->weather[0]->main}}</h4>
@@ -28,21 +28,22 @@
                 <div class = main>
                     <div class = "inner-main">
                         <!--The temperature for the current day in bigger format-->    
-                        <div class = "inner-inner-main">
+                        <div class = "inner-inner-main add">
                         <img clas = "current-weather" src="http://openweathermap.org/img/w/{{$data->list[0]->weather[0]->icon}}.png"> 
                         <p class = "degrees-number">{{intval($data->list[0]->main->temp - 273.15)}}<sup class = "sup"> &#8451; &#8457;</sup></p>
                         </div>
-                        <div>
+                        <div class = "add">
                             <!--Addition information about the current day -->
                             <p>Feels like: {{intval($data->list[0]->main->feels_like - 273.15)}}°</p>
                             <p>Humidity: {{$data->list[0]->main->humidity}}%</p>
                             <p>Wind: {{$data->list[0]->wind->speed * 1.6}} km/h</p>
                         </div> 
+
                     </div>    
                 </div>
                 <div class = "footer">
                 @for($index = 0; $index < 40; $index+=8)     
-                    <div class = "weather-box">
+                    <div class = "weather-box add">
                         <!-- Get the current date and transforms it into the day of the week(only the first 3 letters) -->
                         <h4 id = "date">{{substr(date("l", strtotime($data->list[$index]->dt_txt)), 0, 3)}}</h4>
                         <!-- Get the icon for the current state of the weather -->
