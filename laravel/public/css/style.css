@@ -7,8 +7,8 @@
 }
 
 .outer-container {
-    width: 700px;
-    height: 600px;
+    width: 600px;
+    height: 500px;
     border: 1px solid black;
 }
 .inner-container {
@@ -18,11 +18,9 @@
 }
 .footer {
     display: flex;
-    border:1px solid green;
 }
 .main {
     height:100%;
-    border: 1px solid rgb(238, 238, 36);
 }
 .inner-main {
     display:flex;
@@ -47,7 +45,43 @@
     font-size: 20px;
     padding-right:3px;
 }
+.footer {
+    display:flex;
+    justify-content: space-around;
+}
+.weather-box {
+    flex:1;
+    text-align: center;
+}
+.degrees {
+    display:flex;
+    justify-content: center;
+}
+#d1 {
+    padding-right:10px;
+    border-right: 1px solid grey;  
+}
 
+#d2 {
+    padding-left: 10px;
+    color:grey;
+}
+#date {
+    color:grey;
+    margin-top:0;
+    margin-bottom:0;
+}
+.header {
+    color:grey;
+    margin-left:30px;
+}
+#city {
+    margin-bottom:0;
+}
+
+#cond {
+    margin-top:0;
+}
 /*
 .outer-container {
     display:flex;

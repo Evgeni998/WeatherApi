@@ -15,24 +15,28 @@
           
         </style>
     </head>
-    
        <body>
     <div class = "outer">
         <div class = "outer-container"> 
             <div class = "inner-container">
+                <!--Get the city name, the day of the week and the current condition of the weather -->
                 <div class = header>
-                    <h3>{{$data->city->name}}</h3>
+                    <h2 id = "city">{{$data->city->name}}</h2>
+                    <h4 id = "date">{{substr(date("l", strtotime($data->list[0]->dt_txt)), 0, 3)}}</h4>
+                    <h4 id = "cond">{{$data->list[0]->weather[0]->main}}</h4>
                 </div>
                 <div class = main>
-                    <div class = "inner-main">    
+                    <div class = "inner-main">
+                        <!--The temperature for the current day in bigger format-->    
                         <div class = "inner-inner-main">
                         <img clas = "current-weather" src="http://openweathermap.org/img/w/{{$data->list[0]->weather[0]->icon}}.png"> 
-                        <p class = "degrees-number">10<sup class = "sup"> &#8451; &#8457;</sup></p>
+                        <p class = "degrees-number">{{intval($data->list[0]->main->temp - 273.15)}}<sup class = "sup"> &#8451; &#8457;</sup></p>
                         </div>
                         <div>
-                            <p>Precipitation</p>
-                            <p>Humidity</p>
-                            <p>Wind</p>
+                            <!--Addition information about the current day -->
+                            <p>Feels like: {{intval($data->list[0]->main->feels_like - 273.15)}}°</p>
+                            <p>Humidity: {{$data->list[0]->main->humidity}}%</p>
+                            <p>Wind: {{$data->list[0]->wind->speed * 1.6}} km/h</p>
                         </div> 
                     </div>    
                 </div>
@@ -65,4 +69,4 @@
         </script>
     </body>
 </html>
-
+  
