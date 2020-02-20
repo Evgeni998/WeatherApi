@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css">
@@ -24,14 +23,22 @@
                     <h2 id = "city">{{$data->city->name}}</h2>
                     <h4 id = "date">{{substr(date("l", strtotime($data->list[0]->dt_txt)), 0, 3)}}</h4>
                     <h4 id = "cond">{{$data->list[0]->weather[0]->main}}</h4>
+                    <select name="" id="CountrySelect">
+                        <option id ="one" value="1">Florida</option>
+                        <option id = "two" value="2">Madrid</option>
+                        <option value="3">Paris</option>
+                        <option value="4">Rome</option>
+                    </select> 
                 </div>
+              
                 <div class = main>
                     <div class = "inner-main">
                         <!--The temperature for the current day in bigger format-->    
                         <div class = "inner-inner-main add">
-                        <img clas = "current-weather" src="http://openweathermap.org/img/w/{{$data->list[0]->weather[0]->icon}}.png"> 
+                        <img clas = "current-weather" src="http://openweathermap.org/img/w/{{$data->list[0]->weather[0]->icon}}.png">    
                         <p class = "degrees-number">{{intval($data->list[0]->main->temp - 273.15)}}<sup class = "sup"> &#8451; &#8457;</sup></p>
                         </div>
+                        
                         <div class = "add">
                             <!--Addition information about the current day -->
                             <p>Feels like: {{intval($data->list[0]->main->feels_like - 273.15)}}°</p>
@@ -59,14 +66,14 @@
             </div>
         </div>
     </div>
+        <p id = "smh">AAAAAAAAAAAAAAAA</p>
         <script>
-           
-            document.getElementsByClassName('smh').each.
-        .addEventListener('click', function (event) {
-            alert("Hallo");
-           
-        });
-            
+            var ss = "";
+           document.getElementById("CountrySelect").addEventListener('change',function(){
+               if(document.getElementById(this).id()== 'two'){
+                  ss+=
+               }
+           })
         </script>
     </body>
 </html>
